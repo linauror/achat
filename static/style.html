@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AChat</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="creatBody">
+<div id="header">
+    <div class="container">
+        <h1><a href=""><img src="images/logo.png" alt="Auror chat" title="Auror chat" /></a></h1>
+        <ul class="nav">
+            <li><a href="" class="indexNav">首页</a></li>
+            <li><a href="" class="creatNav">生成代码</a></li>
+            <li><a href="" class="aboutNav">关于AChat</a></li>
+        </ul>
+    </div>
+</div>
+<div id="content">
+    <div class="CreatCon">
+        <ol class="signs">
+            <li>
+                <div class="sign1"></div>
+                设定域名</li>
+            <li class="seq"></li>
+            <li class="here">
+                <div class="sign2"></div>
+                设置样式</li>
+            <li class="seq"></li>
+            <li>
+                <div class="sign3"></div>
+                插入代码</li>
+        </ol>
+        <form action="" method="post" class="setStyle">
+            <dl>
+                <dt>设置尺寸：</dt>
+                <dd class="set_size"> 
+                    <p>
+                        宽 <input id="width" type="text" name="width" class="txt" /> px 高 <input id="height" name="height" type="text" class="txt" /> px
+                    </p> 
+                    <p class="normal" id="widget_wh_error">宽度:190-1024px,高度:75-800px</p><!-- 切换class="warning",class="normal"改变效果 -->
+                    <p>
+                        <input type="checkbox" class="chk" id="autowidth">
+                        <label for="autowidth">宽度自动适应</label>
+                    </p>
+                </dd>
+                <dt>外观方案：</dt>
+                <dd class="skins">
+                    <p>
+                        <label for="background-color">自定义背景颜色</label> #<input type="text" class="txt" id="background-color" /> <span class="color"></span>
+                    </p>
+                    <p>
+                        <label for="background-image">自定义背景图片</label> &nbsp;&nbsp;<input type="text" class="txt background-image" id="background-image" name="background-image" />
+                    </p>
+                    <p>
+                        <input type="checkbox" name="border" id="boder" class="chk" /> <label for="boder">显示边框</label> <span class="color"></span>
+                    </p>
+                </dd>
+                <dt>昵称设置：</dt>
+                <dd>
+                    <p>
+                        <input type="radio" class="rd diy-username" name="diy-username" checked="true" value="diy" /> <label>自定义昵称</label> <input type="text" class="txt" id="username" value="游客" />
+                    </p>
+                    <p>
+                        <input type="radio" class="rd diy-username" name="diy-username" value="program" /> <label>程序设置</label> <a href="#">详细说明</a>
+                    </p>
+                </dd>
+                <p>
+                    <input type="submit" class="submit" value="下一步">
+                </p>
+                <dt id="program-dec">关于程序设置昵称：</dt>
+                <dd>
+                    <p>把代码中<span>{$username}</span>部分替换为程序中输出username的语句，如PHP：</p>
+                    <p>...username=&lt;?php echo $username;?&amp;...</p>
+                </dd>
+            </dl>
+        </form>
+        <div class="preview">
+        <h2>效果预览</h2>
+        <iframe src="chat.html" width="900" height="900" frameborder="0"></iframe>
+        </div>
+    </div>
+</div>
+<div id="footer">© 2012 Achat, Inc. All rights reserved.</div>
+</body>
+</html>

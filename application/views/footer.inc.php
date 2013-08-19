@@ -1,0 +1,1 @@
+<div id="footer">© 2012 Achat, Inc. All rights reserved.</div>

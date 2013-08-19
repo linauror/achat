@@ -1,0 +1,136 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+
+/* RESET start ↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 
+---------------------------------------------------------------------------------------------------------------*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td { margin: 0; padding: 0; }
+fieldset, img { border: 0; }
+/* remember to define focus styles! */
+:focus { outline: 0; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+abbr, acronym { border: 0; font-variant: normal; }
+input, button, textarea, select, optgroup, option { font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; }
+code, kbd, samp, tt { font-size: 100%; }
+/*@purpose To enable resizing for IE */
+/*@branch For IE6-Win, IE7-Win */
+input, button, textarea, select { *font-size: 100%;
+}
+ol, ul, dl, li, dd { list-style: none; }
+/* tables still need 'cellspacing="0"' in the markup */
+table { border-collapse: collapse; border-spacing: 0; }
+caption, th { text-align: left; }
+sup, sub { font-size: 100%; vertical-align: baseline; }
+/* remember to highlight anchors and inserts somehow! */
+a:link, a:visited, ins { text-decoration: none; }
+blockquote, q { quotes: none; }
+.clear { height: 1%; overflow: hidden; }
+.after { content: "."; display: block; height: 0; clear: both; visibility: hidden; zoom: 1; }
+html, body { width: 100%; height: 100%; }
+a { color: #000; }
+a:hover { color: #F60; text-decoration: underline; }
+input[type="text"], textarea, .shadow{ border: 1px solid #ccc;-webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;-webkit-transition: border 0.2s linear, box-shadow 0.2s linear; -webkit-box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 2px inset; box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 2px inset;}
+input[type="text"]:focus, textarea:focus, .shadow:focus{outline: 0px;border-color: rgba(82, 168, 236, 0.8);-webkit-box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 2px inset, rgba(82, 168, 236, 0.6) 0px 0px 8px;box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 2px inset, rgba(82, 168, 236, 0.6) 0px 0px 8px;}
+/* RESET end*/
+
+
+
+
+
+/*layout ↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+------------------------------------------------------------------------------------------------------------*/
+
+
+body { font: 12px/25px 'Helvetica Neue', 'Luxi Sans', 'DejaVu Sans', Tahoma, 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei', Arial, sans-serif; }
+#container { width: 1003px; margin: 0 auto; }
+#indexBody .indexNav,#creatBody .creatNav,#ContactBody .contactNav { background-color: #0C6FB2; border-left: 1px solid #0C619B; border-right: 1px solid #0C619B; -webkit-box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.25); -moz-box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.25); box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.25); }
+
+/*header start
+-----------------------------------------------*/
+#header { background: #1C86D1; height: 49px; margin-bottom: 10px }
+#header .container { width: 990px; margin: 0 auto; }
+#header h1 { float: left; width: 160px; height: 49px; }
+#header h1 a { display: block; padding-top: 10px }
+#header .nav li { float: left; }
+#header .nav li a { font-size: 14px; color: #fff; padding: 0 12px; border-left: 1px solid #2393e2; border-right: 1px solid #1878bb; display: block; line-height: 49px; }
+#header .nav li a:hover { background-color: #147BC2; text-decoration: none; }
+/*header end
+------------------------------------------------*/
+
+
+/*content start
+-------------------------------------------------*/
+#content { padding: 5px 0; width: 990px; margin: 0 auto; zoom: 1; color: #64686F; position: relative; }
+#content:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+
+/*index*/
+.index{ margin-top: -15px;}
+.index iframe{ margin-top: 5px;}
+
+.signs { margin: 20px auto; overflow: hidden; width: 700px; }
+.signs li { float: left; width: 150px; line-height: 49px; font-size: 20px; color: #8d8d8d; }
+.signs li.seq { background: url(../images/global_sprite.v2.png) no-repeat -141px -400px; width: 100px; height: 2px; margin-top: 24px; margin-right: 20px; float: left; }
+.signs li.here { color: #64686f; font-weight: bold; }
+.signs li div { width: 31px; height: 31px; margin-right: 10px; float: left; margin-top: 10px; }
+.signs li.here div { margin-top: 0; width: 49px; height: 49px; }
+.signs .sign1 { background: url(../images/global_sprite.v2.png) no-repeat -12px -340px; }
+.signs .sign2 { background: url(../images/global_sprite.v2.png) no-repeat -50px -340px; }
+.signs .sign3 { background: url(../images/global_sprite.v2.png) no-repeat -87px -340px; }
+.signs .here .sign1 { background: url(../images/global_sprite.v2.png) no-repeat -128px -324px; }
+.signs .here .sign2 { background: url(../images/global_sprite.v2.png) no-repeat -186px -324px; }
+.signs .here .sign3 { background: url(../images/global_sprite.v2.png) no-repeat -242px -324px; }
+
+.CreatCon form{ padding-bottom: 20px;}
+.CreatCon form.setDomain{ width: 640px; position: relative; margin: 0 auto; font-size: 14px; }
+.CreatCon form p{ margin: 20px 0; clear: both; line-height: 40px;}
+.CreatCon form p .inputText{ width: 430px; height: 30px; font-size: 16px; line-height: 22px; padding: 4px;}
+.CreatCon form p .submit{ padding: 7px 17px; margin: 20px 0; margin-left: 47px; font-size: 12px; color: #fff;background-color: #1C86D1;border: 1px solid #1179C2;-webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; cursor: pointer;background-image: -webkit-linear-gradient(top, #1C8FDF, #1C86D1);
+-webkit-transition: all 0.1s linear;}
+
+.CreatCon form .domainResults{ width: 438px; background: #fff; position: absolute; left: 60px; top: 100px; border: 1px solid #d0d0d2; border-top: none; display: none;}
+.CreatCon form .domainResults a{ display: block; width: 422px; background: #ecf4f9; margin: 3px; height: 30px; padding: 5px; font-size: 16px; color: #64686F;}
+.CreatCon form .domainResults a:hover{ text-decoration: none;}
+
+.CreatCon .setStyle{ width: 290px; padding-right: 10px; margin-right: 10px; border-right: 1px solid #ccc; float: left;}
+.CreatCon .setStyle input[type="checkbox"], .CreatCon .setStyle input[type="radio"]{ position: relative; top: 2px;}
+.CreatCon .setStyle dl dt,.CreatCon form p.tip,.CreatCon h2{ font-size: 14px; font-weight: bold; padding-bottom: 10px;}
+.CreatCon .setStyle dl dd{ border-bottom: 1px dotted #ccc; padding-bottom: 10px; margin-bottom: 10px;}
+.CreatCon .setStyle dl dd p{ margin:0 0 0 14px; line-height: 30px;}
+.CreatCon .setStyle dl dd p.normal{ color: #999;}
+.CreatCon .setStyle dl dd p input.txt{ width: 40px;}
+.CreatCon .setStyle #username{ width: 80px;}
+
+.CreatCon .preview{ position: absolute; top: 95px; left: 310px; width: 800px;}
+/*insertCode*/
+.insertCode textarea{ width: 980px; height: 100px; font-size: 16px; padding: 5px;}
+.CreatCon .insertCode  p{ margin: 0;}
+/*chat*/
+.chat { min-width: 300px; min-height: 300px;}
+.chatInner{ border: 1px solid #ccc; padding: 5px;}
+.chat .chatBox, .chat .online { border: 1px solid #ccc; padding: 5px; height: 193px; min-height: 193px;  overflow-y: auto;}
+.chat .chatBox{ margin-right: 116px;}
+.chat .online {float: right;position: relative; width: 100px; }
+.chat .online dd { position: relative; text-indent:15px; height: 20px; line-height: 20px; overflow: hidden;}
+.chat .online dd span{ width: 5px; height: 5px; background:#5ecb05; display: block; position: absolute; left: 5px; top: 8px;}
+.chat .username { position: absolute; width: 95px; height: 16px; left: 5px; bottom: 5px;}
+.chat .sayBox { width: 100%; clear: both; margin-top: 5px;}
+.chat .words { height: 60px; line-height: 20px; width: 100%; border: 1px solid #ccc;}
+.chat .wordsBox{ margin-right: 117px;}
+.chat .submit { height: 60px; width: 112px; cursor: pointer; font-size: 24px; float: right;}
+.chat .power{ text-align: right; padding-right: 3px; line-height: 16px; height: 16px;}
+.chat .power a{ color: #aaa;}
+
+/*Contact*/
+.Contact{ padding: 20px; font-size: 14px;}
+
+
+/*content end
+-------------------------------------------------*/
+
+
+/*footer start
+-------------------------------------------------*/
+#footer { clear: both; padding: 20px 0; text-align: center; border-top: 1px solid #E7E8E9; color: #979797; }
+
+/*footer end
+-------------------------------------------------*/

@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AChat</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+function submit(){
+    var username = $('.username').val();
+    var words = $('.words').val();
+    if(username.length < 1){
+        alert('请给个昵称吧!');
+        $('.username').focus();
+        return false;
+    }else if(words.length < 1){
+        alert('不能发送空字符！');
+        $('.words').focus();
+        return false;
+    }
+    $.ajax({
+        type : "POST",
+        url : "http://localhost/chat/index.php/chat/submit.html",
+        data : "username=" + username + "&words=" + words,
+        success : function(data){
+            data = eval('('+data+')');
+            var addchat = '<strong>'+ username + ' ' +data.formattime +'</strong><p>' + words + '</p>';
+            $('.words').val('');
+            $('.chatBox').append(addchat);
+            $('.username').attr('time', data.time);
+            theScrollTop = document.getElementById('chatBox').scrollTop;
+            $('.chatBox').animate({scrollTop: parseInt(theScrollTop) + 50 + 'px'});
+        }
+    })
+}
+function newchat(){
+    var time = $('.username').attr('time');
+    $.ajax({
+        type : "POST",
+        url : "http://localhost/chat/index.php/chat/newchat.html",
+        data : "time=" + time,
+        success : function(data){
+            data = eval('('+data+')');
+            addchat = '';
+            if(data.count){
+                $(data.data).each(function(x,y){
+                    var d = new Date(y.time/10);
+                    addchat += '<strong>' + y.username + ' ' + ('0' + d.getHours()).slice(-2) + ":" +('0' + d.getMinutes()).slice(-2) + ":" + ('0' + d.getSeconds()).slice(-2) + '</strong><p>' + y.words + '</p>';
+                });
+                $('.chatBox').append(addchat);
+                $('.username').attr('time', data.time); 
+                theScrollTop = document.getElementById('chatBox').scrollTop;
+                $('.chatBox').animate({scrollTop: parseInt(theScrollTop) + 25 * (parseInt(data.count) + 1) + 'px'});
+                
+            }
+        }
+    })    
+}
+function userOnline(){
+    $.ajax({
+        type : "POST",
+        url : "http://localhost/chat/index.php/chat/online.html",
+        data : "",
+        success : function(data){
+            data = eval('('+data+')');
+            online = '';
+            $(data).each(function(x,y){
+                online += '<dd>' + y.username + '</dd>';
+            })
+            $('.online dd').remove();
+            $('.online dt').after(online);
+        }
+    })
+}
+
+setInterval("newchat()", 3000);
+setInterval("userOnline()", 5000);
+window.onload = function(){
+    $('.chatBox').animate({scrollTop: '1000px'});
+}
+</script>
+
+</head>
+<body>
+<div class="chat">
+    <div class="chatInner shadow">
+        <dl class="online shadow">
+            <input type="text" class="username" placeholder="输入昵称" value="someone" time="" >
+            <dt>在线列表</dt>
+            <dd><span></span>一个人</dd>
+            <dd><span></span>一个人</dd>
+            <dd><span></span>一个人</dd>
+            <dd><span></span>一个人</dd>
+        </dl>
+        <div class="chatBox shadow" id="chatBox"> <strong>nihao 15:50:46</strong>
+            <p>哼</p>
+            <strong>nihao 15:59:41</strong>
+            <p>dsds </p>
+            <strong>瞎 15:59:58</strong>
+            <p>哼</p>
+        </div>
+        <div class="sayBox">
+            <input type="button" class="submit shadow" value="发送" onclick="submit();">
+            <div class="wordsBox">
+                <textarea class="words shadow"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
